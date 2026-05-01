@@ -13,7 +13,7 @@
 
 ---
 
-[Features](#-features) · [Editions](#-editions) · [Installation](#-installation) · [Usage](#-usage) · [Build to EXE](#build-to-exe) · [Project Structure](#-project-structure) · [Author](#-author)
+[Features](#-features) · [Editions](#-editions) · [Installation](#-installation) · [Usage](#-usage) · [Build to EXE](#-build-to-exe) · [Project Structure](#-project-structure) · [Author](#-author)
 
 </div>
 
