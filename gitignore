@@ -1,0 +1,120 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  Voice Studio — .gitignore
+#  Covers app_v1.py (Classic Edition) and app_v2.py (Premium Edition)
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+
+# ── Virtual Environments ──────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+.env/
+Lib/
+Scripts/
+
+
+# ── Distribution / Build ──────────────────────────────────────────────────────
+build/
+dist/
+*.egg-info/
+*.egg
+MANIFEST
+*.spec
+
+
+# ── App Runtime Data ──────────────────────────────────────────────────────────
+# User-generated at runtime — not for version control.
+# Default location: ~/VoiceStudio/
+
+VoiceStudio/
+
+# Classic Edition (app_v1.py) settings
+.settings_v1.json
+
+# Premium Edition (app_v2.py) settings
+.settings.json
+
+# Premium Edition structured log (logging module → voicestudio.log)
+voicestudio.log
+*.log
+
+# Auto-saved transcriptions (both editions, when auto_save = True)
+auto_*.txt
+
+# Manually saved transcripts (timestamped by both editions)
+transcript_*.txt
+transcript_*.md
+transcript_*.log
+
+# Saved TTS audio exports (timestamped by both editions)
+speech_*.wav
+speech_*.mp3
+
+
+# ── Audio / Media Files ───────────────────────────────────────────────────────
+# Exclude test/generated audio — large binaries don't belong in git.
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.aiff
+*.aac
+*.m4a
+
+
+# ── IDE / Editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+
+
+# ── OS Files ──────────────────────────────────────────────────────────────────
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+
+# ── Temporary / Misc ──────────────────────────────────────────────────────────
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+tempCodeRunnerFile.py

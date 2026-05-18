@@ -1,0 +1,75 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  Voice Studio — Python Dependencies
+#  Covers both app_v1.py (Classic Edition) and app_v2.py (Premium Edition)
+#
+#  Quick install (all):
+#      pip install -r requirements.txt
+#
+#  Minimal install (core only):
+#      pip install SpeechRecognition PyAudio pyttsx3
+#
+#  Linux system pre-requisites:
+#      sudo apt install portaudio19-dev python3-tk espeak
+#
+#  macOS system pre-requisites:
+#      brew install portaudio
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+# ── Core: Speech Recognition (STT) ───────────────────────────────────────────
+SpeechRecognition>=3.10.0
+    # Google Speech Recognition API wrapper
+    # Used by STTEngine in both editions
+    # Supports: microphone input + WAV/MP3 file transcription
+    # Premium also accepts: FLAC, OGG, AIFF (via browse dialog)
+
+PyAudio>=0.2.14
+    # Low-level microphone access (PortAudio binding)
+    # Required for live mic recording in both editions
+    # Windows: install via pipwin if pip fails
+    #   pip install pipwin && pipwin install pyaudio
+
+
+# ── Core: Text to Speech (TTS) ───────────────────────────────────────────────
+pyttsx3>=2.90
+    # Offline TTS engine — no internet required
+    # Platform drivers: SAPI5 (Windows) · espeak (Linux) · nsss (macOS)
+    # Both editions create a fresh engine instance per speak call to avoid
+    # the known "run loop already started" / COM zombie thread bug
+    # Rate range: 50–400 wpm (Classic) · 50–450 wpm (Premium)
+
+
+# ── Optional: Online TTS + MP3 Export ────────────────────────────────────────
+gTTS>=2.5.0
+    # Google Text-to-Speech — requires active internet connection
+    # Powers the online TTS engine mode and MP3 audio export
+    # Language support:
+    #   Classic  (app_v1): 16 locales (en, hi, es, fr, de, it, pt, ru,
+    #                                  zh-cn, ja, ko, ar, tr, nl, pl, sv)
+    #   Premium  (app_v2): 24 locales (adds en-uk, en-au, zh-tw, da, fi,
+    #                                  el, bn, ur)
+    # Premium enforces an 8,000-character input limit before synthesis
+
+pygame>=2.5.2
+    # MP3 playback for gTTS audio output
+    # Playback fallback chain: pygame → pydub → OS player
+    # Both editions suppress pygame init banners by redirecting
+    # stderr/stdout during import, then restoring immediately
+
+
+# ── Optional: Audio Processing ────────────────────────────────────────────────
+pydub>=0.25.1
+    # Audio format conversion and secondary playback fallback
+    # Used when pygame is unavailable for gTTS MP3 playback
+    # Requires FFmpeg on PATH for non-WAV format conversion
+
+
+# ── Build Only: Packaging to EXE / Binary ────────────────────────────────────
+pyinstaller>=6.0.0
+    # Cross-platform app bundler (not needed to run the app)
+    # See README.md → "Build to EXE" for platform-specific hidden-import flags
+    # Required hidden imports (add to pyinstaller command):
+    #   Windows:  --hidden-import=pyttsx3.drivers.sapi5
+    #   macOS:    --hidden-import=pyttsx3.drivers.nsss
+    #   Linux:    --hidden-import=pyttsx3.drivers.espeak
+    #   All:      --hidden-import=speech_recognition

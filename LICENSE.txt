@@ -1,0 +1,93 @@
+MIT License
+
+Copyright © 2026 Abhishek Srivastava
+https://www.linkedin.com/in/abhishek-srivastava-1538461b1/
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+───────────────────────────────────────────────────────────────────────────────
+
+COVERED SOFTWARE
+
+  app_v1.py  —  Voice Studio Pro, Classic Edition  v1.0
+  app_v2.py  —  Voice Studio, Production Edition   v2.0
+
+Both editions are standalone Python/Tkinter desktop applications providing
+speech-to-text (STT) and text-to-speech (TTS) functionality, authored by
+Abhishek Srivastava.
+
+───────────────────────────────────────────────────────────────────────────────
+
+THIRD-PARTY ACKNOWLEDGEMENTS
+
+This software makes use of the following open-source packages, each governed
+by their own respective license:
+
+  SpeechRecognition   BSD License
+                      https://github.com/Uberi/speech_recognition
+                      Used for Google Speech API integration (STT engine)
+                      in both Classic and Premium editions.
+
+  PyAudio             MIT License
+                      https://people.csail.mit.edu/hubert/pyaudio/
+                      Used for microphone access (PortAudio binding)
+                      in both editions.
+
+  pyttsx3             BSD License (2-Clause)
+                      https://github.com/nateshmbhat/pyttsx3
+                      Used for offline TTS (SAPI5 / espeak / nsss).
+                      Both editions create a fresh engine instance per
+                      speak call to avoid the known upstream COM / run-loop
+                      re-entrancy bug.
+
+  gTTS                MIT License
+                      https://github.com/pndurette/gTTS
+                      Used for online TTS and MP3 audio export.
+                      Classic supports 16 locales; Premium supports 24.
+                      Premium enforces an 8,000-character input limit.
+
+  pygame              LGPL License (v2.1)
+                      https://www.pygame.org/
+                      Used for MP3 playback of gTTS output.
+                      Both editions suppress pygame init banners safely.
+
+  pydub               MIT License
+                      https://github.com/jiaaro/pydub
+                      Used for audio format conversion and fallback playback
+                      when pygame is unavailable.
+
+  PyInstaller         GPL License (v2) with Bootloader Exception
+                      https://pyinstaller.org/
+                      Used to package the application into standalone
+                      executables. Not linked into the running application.
+
+───────────────────────────────────────────────────────────────────────────────
+
+GOOGLE SPEECH RECOGNITION API
+
+Speech recognition in both editions is powered by the Google Speech
+Recognition API (https://cloud.google.com/speech-to-text).
+
+  · An active internet connection is required for all STT operations.
+  · This software does not store, transmit, or share any audio data beyond
+    what is required to perform recognition via the API.
+  · Use of the API is subject to Google's Terms of Service:
+    https://policies.google.com/terms
+
+───────────────────────────────────────────────────────────────────────────────
