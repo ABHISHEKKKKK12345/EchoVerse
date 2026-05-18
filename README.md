@@ -480,7 +480,11 @@ tempCodeRunnerFile.py
 pip install pipwin
 pipwin install pyaudio
 ```
-Or download a pre-built wheel from [Christoph Gohlke's repository](https://www.cgohlke.com/) and install with `pip install PyAudio‑*.whl`.
+Or download a pre-built wheel from [Christoph Gohlke's repository](https://www.cgohlke.com/#pyaudio) and install it with:
+
+```bash
+pip install <downloaded-wheel-file>.whl
+```
 
 **`PyAudio` install fails on Linux**
 ```bash
