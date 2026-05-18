@@ -7,7 +7,7 @@
 <p>
   <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.9+"></a>
   <a href="https://docs.python.org/3/library/tkinter.html"><img src="https://img.shields.io/badge/GUI-Tkinter-FF6B35?style=for-the-badge" alt="Tkinter"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-22d3a4?style=for-the-badge" alt="MIT License"></a>
+  <a href="LICENSE.txt"><img src="https://img.shields.io/badge/License-MIT-22d3a4?style=for-the-badge" alt="MIT License"></a>
   <a href="https://www.linkedin.com/in/abhishek-srivastava-1538461b1/"><img src="https://img.shields.io/badge/Author-Abhishek%20Srivastava-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 </p>
 
